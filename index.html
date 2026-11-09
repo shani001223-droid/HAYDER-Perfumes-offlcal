@@ -75,6 +75,152 @@
     @media(max-width:1020px){.nav{gap:20px}.header-icons{gap:11px}.header-inner{gap:13px}.hero{height:445px}.hero-image{width:70%}.hero h1{font-size:48px}.hero-copy{padding-top:50px}.benefit{gap:8px;padding:0 7px}.benefit .icon{width:25px;height:25px}.benefit span{font-size:10px}.product-title{font-size:21px}.product-desc{font-size:8px}.story-content{grid-template-columns:1fr 170px;gap:14px;padding-right:14px}.story-cta{padding-left:18px}}
     @media(max-width:760px){.topbar{min-height:33px}.topbar-inner{grid-template-columns:1fr}.topitem{font-size:10px;min-height:32px}.topitem:not(:first-child){display:none}.site-header{height:75px}.brand{width:128px;min-width:128px}.brand img{width:128px}.header-inner{justify-content:space-between;padding:0 15px}.header-icons{gap:12px}.header-icons .icon{width:21px;height:21px}.menu-toggle{display:grid}.nav{display:none;position:absolute;top:75px;left:0;right:0;background:#090a09;border-bottom:1px solid #92713b;padding:17px 25px;box-shadow:0 19px 24px #000a}.nav.menu-open{display:flex;flex-direction:column;align-items:stretch;gap:1px}.nav a,.nav button{text-align:left;padding:12px 5px;font-size:14px}.nav a.active{border-bottom:0}.shop-dropdown{position:static;width:100%;box-shadow:none;margin:0}.hero{height:auto;display:flex;flex-direction:column;min-height:640px}.hero::after{background:linear-gradient(180deg,#050606 0%,#070808 38%,transparent 68%);z-index:0}.hero-image{width:100%;height:345px;top:auto;bottom:0;object-fit:cover;object-position:center}.hero-copy{height:auto;min-height:360px;padding:38px 22px 20px;align-items:center;text-align:center}.hero h1{font-size:clamp(43px,10vw,63px)}.hero h2{font-size:26px;letter-spacing:2px;margin:5px 0 14px}.eyebrow{font-size:13px;letter-spacing:3.6px}.gold-rule{margin-bottom:13px}.hero p{font-size:12px;max-width:355px;margin-bottom:20px}.hero-actions{justify-content:center}.benefits-inner{grid-template-columns:repeat(2,1fr);row-gap:15px}.benefits{padding:13px 0}.benefit:nth-child(3){border-left:0}.benefit{justify-content:start;padding-left:14px}.benefit span{font-size:11px}.collection{padding:32px 13px 35px}.product-grid{grid-template-columns:repeat(2,1fr);gap:12px}.section-head{padding-bottom:22px}.section-head h2{font-size:34px}.section-head p{font-size:12px}.product-title{font-size:21px}.product-desc{white-space:normal;min-height:27px;font-size:9px}.card-actions{gap:3px}.add-cart{width:79%;font-size:9px}.heart svg{width:21px;height:21px}.story{grid-template-columns:1fr}.story-photo{min-height:190px;max-height:190px;background-size:cover;background-position:center 43%}.story-content{grid-template-columns:1fr;padding:15px 22px 35px;text-align:center}.story-cta{border:0;padding:0}.story h2{font-size:34px}.extras-inner{grid-template-columns:1fr;gap:22px}.extras{padding:35px 20px}.detail-grid{grid-template-columns:1fr}.detail-grid img{max-height:240px;object-fit:cover}}
     @media(max-width:390px){.header-icons{gap:7px}.brand,.brand img{width:115px;min-width:115px}.hero{min-height:595px}.hero-copy{min-height:340px;padding-top:32px}.hero-image{height:305px}.hero h1{font-size:39px}.hero h2{font-size:22px}.hero-actions .btn{font-size:10px;padding:9px 12px}.benefit .icon{width:22px;height:22px}.product-grid{gap:7px}.product-card{border-radius:7px}.card-info{padding:2px 5px 10px}.product-title{font-size:19px}.product-price{font-size:15px}.heart svg{width:19px;height:19px}}
+
+    /* Mobile-only layout corrections — desktop rules are untouched. */
+    @media screen and (max-width: 768px) {
+      /* Single-line delivery announcement */
+      .topbar { min-height: 34px; padding: 0 8px; }
+      .topbar-inner { display: flex; width: 100%; justify-content: center; align-items: center; }
+      .topitem { display: none !important; }
+      .topitem:first-child {
+        display: flex !important;
+        border: 0;
+        min-width: 0;
+        min-height: 34px;
+        gap: 6px;
+        font-size: clamp(9px, 2.5vw, 11px);
+        white-space: nowrap;
+        text-align: center;
+      }
+      .topitem:first-child .icon { width: 17px; height: 17px; }
+
+      /* Compact mobile navigation for 761–768px as well */
+      .site-header { height: 75px; }
+      .header-inner { justify-content: space-between; gap: 10px; padding: 0 15px; }
+      .brand { width: 128px; min-width: 128px; }
+      .brand img { width: 128px; }
+      .menu-toggle { display: grid; }
+      .nav {
+        display: none;
+        position: absolute;
+        top: 75px;
+        left: 0;
+        right: 0;
+        padding: 17px 25px;
+        background: #090a09;
+        border-bottom: 1px solid #92713b;
+        box-shadow: 0 19px 24px #000a;
+      }
+      .nav.menu-open { display: flex; flex-direction: column; align-items: stretch; gap: 1px; }
+      .nav a, .nav button { text-align: left; padding: 12px 5px; font-size: 14px; }
+
+      /* Hero: text above, actual image below — no absolute overlay */
+      .hero {
+        display: flex;
+        flex-direction: column;
+        height: auto;
+        min-height: 0;
+        overflow: hidden;
+        background: #080807;
+      }
+      .hero::after { display: none; }
+      .hero-copy {
+        order: 1;
+        position: relative;
+        z-index: 1;
+        width: 100%;
+        max-width: 100%;
+        height: auto;
+        min-height: 0;
+        padding: 30px 18px 24px;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        background: linear-gradient(180deg, #060707, #110e0a);
+      }
+      .hero .eyebrow { font-size: 11px; letter-spacing: 2.5px; }
+      .hero h1 {
+        font-size: 32px;
+        line-height: 1.14;
+        letter-spacing: 0;
+        margin: 14px 0 0;
+        max-width: 100%;
+        text-align: center;
+      }
+      .hero h2 { font-size: 22px; margin: 7px 0 14px; letter-spacing: 2px; }
+      .hero p { font-size: 12px; max-width: 340px; margin: 0 0 20px; }
+
+      .hero-actions {
+        display: flex;
+        flex-direction: column;
+        align-items: stretch;
+        width: 100%;
+        max-width: 360px;
+        gap: 10px;
+      }
+      .hero-actions .btn {
+        display: flex;
+        width: 100%;
+        min-height: 46px;
+        justify-content: center;
+        white-space: normal;
+        font-size: 12px;
+        padding: 11px 14px;
+      }
+      .hero-image {
+        order: 2;
+        display: block;
+        position: relative;
+        inset: auto;
+        width: 100%;
+        max-width: 100%;
+        height: auto;
+        max-height: none;
+        aspect-ratio: 799 / 478;
+        object-fit: contain;
+        object-position: center;
+        flex: none;
+        margin: 0;
+        /* Hides cut-off lettering baked into upper-left of source artwork;
+           no perfume bottles are cropped. */
+        clip-path: polygon(12% 0, 100% 0, 100% 100%, 0 100%, 0 34%, 12% 34%);
+      }
+
+      /* Collection: centered heading and two complete product cards per row */
+      .collection { padding: 28px 12px 34px; }
+      .section-head { padding: 0 0 18px; }
+      .heading-decoration { display: block; width: 100%; }
+      .heading-decoration::before,
+      .heading-decoration::after { display: none; }
+      .section-head h2 {
+        font-size: 28px;
+        line-height: 1.13;
+        text-align: center;
+        white-space: nowrap;
+        letter-spacing: -0.5px;
+        margin: 4px auto 8px;
+      }
+      .section-head p { text-align: center; font-size: 12px; }
+      .product-grid {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 10px;
+        width: 100%;
+        max-width: 100%;
+      }
+      .product-card { min-width: 0; overflow: hidden; }
+      .product-photo {
+        display: block;
+        width: 100%;
+        height: auto;
+        aspect-ratio: 271 / 175;
+        object-fit: contain;
+        object-position: center;
+      }
+      .product-title { font-size: clamp(17px, 4.7vw, 21px); }
+      .card-info { padding: 4px 6px 12px; }
+    }
+
     @media(prefers-reduced-motion:reduce){*,*::before,*::after{scroll-behavior:auto!important;transition:none!important}}
   </style>
 </head>
