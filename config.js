@@ -38,7 +38,7 @@ window.HAYDER_CONFIG = {
     {
       id: 'dark-empire', name: 'DARK EMPIRE', tagline: 'THE ROYAL OUD',
       description: 'A rich, commanding signature of quiet power.',
-      image: 'assets/dark-empire.webp', price: 2499, oldPrice: 3499,
+      image: 'assets/dark-empire.webp', price: 3499, oldPrice: 4500,
       volume: '50 ML', category: 'Unisex · Oud', bestseller: false,
       accent: '#d5b987'
     }
